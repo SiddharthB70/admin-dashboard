@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    --sidebar-blue: #1992d4;
+    --main-grey: #e2e8f0;
+}
+
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: "sidebar header"
+                        "sidebar main";
+    grid-template-columns: minmax(min-content,300px) 1fr;
+    grid-template-rows: minmax(max-content,200px) 1fr;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background: var(--sidebar-blue);
+    display: grid;
+    align-content: start;
+    gap: 30px;
+    padding: 5px;
+
+}
+
+.sidebar>.logo,
+.sidebar>.menu,
+.sidebar>.user-help{
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.sidebar>.logo{
+    font-size: 30px;
+}
+
+.header{
+    grid-area: header;
+}
+
+.main-content{
+    grid-area: main;
+    background: var(--main-grey);
+}
+
+
