@@ -1,0 +1,1 @@
+This project is part of the curriculum of the Odin project. In this project we create an Admin Dashboard in order to understand the two layout techniques offered by CSS i.e., Flexbox and Grid. Using a give template, we design the dashboard using flexbox and grid and understand how they work.
