@@ -11,7 +11,7 @@ body{
     grid-template-areas: "sidebar header"
                         "sidebar main";
     grid-template-columns: minmax(min-content,300px) 1fr;
-    grid-template-rows: minmax(max-content,200px) 1fr;
+    grid-template-rows: 170px 1fr;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -20,7 +20,7 @@ body{
     background: var(--sidebar-blue);
     display: grid;
     align-content: start;
-    gap: 30px;
+    gap: 50px;
     padding: 10px 15px;
     box-sizing:border-box;
 
@@ -33,7 +33,7 @@ body{
     font-weight: 600;
     font-size: 20px;
     display: grid;
-
+    gap: 8px;
 }
 
 .sidebar>.logo>.option,
@@ -48,7 +48,7 @@ body{
     align-items: center;
 }
 
-.sidebar .option>svg{
+.sidebar>*>.option>svg{
     justify-self: center;
 }
 
@@ -58,7 +58,71 @@ body{
 
 .header{
     grid-area: header;
+    display: grid;
+    grid-template-rows: 50px 110px;
+    box-sizing: border-box;
+    padding: 5px 70px 0 30px;
 }
+
+.header>.navigation-bar,
+.header>.profile-bar{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    column-gap: 30px;
+}
+
+.header>.navigation-bar{
+    grid-template-columns: auto minmax(300px,1fr) repeat(3,auto); 
+}
+
+.header>.navigation-bar>.search-bar{
+    width: max(300px,90%);
+    border-radius: 40px;
+    height: 30px;
+    background: var(--main-grey);
+    justify-self: start;
+    margin-left: -15px;
+    white-space: nowrap;
+}
+
+
+.circle-back{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #facc15;
+}
+
+.header>.navigation-bar>.profile-name{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.header>.profile-bar{
+    grid-template-columns: 80px max-content 1fr repeat(3,100px);
+}
+
+.header>.profile-bar>.profile-icon>.circle-back{
+    width: 75px;
+    height: 75px;
+}
+
+.header>.profile-bar>.bar-text{
+    font-weight: bold;
+    margin: -10px;
+}
+
+.header>.profile-bar>.bar-text{ 
+    font-size: 13px;
+}
+
+.header>.profile-bar>.bar-text>p:nth-child(2){
+    box-sizing: border-box;
+    margin-top: 5px;
+    font-size: 22px;
+}
+
 
 .main-content{
     grid-area: main;
