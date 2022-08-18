@@ -21,7 +21,8 @@ body{
     display: grid;
     align-content: start;
     gap: 30px;
-    padding: 5px;
+    padding: 10px 15px;
+    box-sizing:border-box;
 
 }
 
@@ -29,11 +30,29 @@ body{
 .sidebar>.menu,
 .sidebar>.user-help{
     color: white;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 20px;
+    display: grid;
+
 }
 
-.sidebar>.logo{
+.sidebar>.logo>.option,
+.sidebar>.menu>.option,
+.sidebar>.user-help>.option{
+    display: grid;
+    align-content: center;
+    grid-template-columns: 44px 1fr;
+    gap: 10px;
+    box-sizing: border-box;
+    padding: 7px;
+    align-items: center;
+}
+
+.sidebar .option>svg{
+    justify-self: center;
+}
+
+.sidebar>.logo>.option{
     font-size: 30px;
 }
 
