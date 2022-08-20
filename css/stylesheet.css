@@ -100,7 +100,8 @@ body{
 }
 
 .header>.profile-bar{
-    grid-template-columns: 80px max-content 1fr repeat(3,100px);
+    grid-template-columns: 80px max-content minmax(0px,1fr) repeat(3,100px);
+    column-gap: 20px;
 }
 
 .header>.profile-bar>.profile-icon>.circle-back{
@@ -110,10 +111,7 @@ body{
 
 .header>.profile-bar>.bar-text{
     font-weight: bold;
-    margin: -10px;
-}
-
-.header>.profile-bar>.bar-text{ 
+    margin: -5px;
     font-size: 13px;
 }
 
@@ -121,6 +119,42 @@ body{
     box-sizing: border-box;
     margin-top: 5px;
     font-size: 22px;
+}
+
+.header>.profile-bar>.button{
+    background: var(--sidebar-blue);
+    color: white;
+    width: 95px;
+    height: 38px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+}
+
+.header>.profile-bar>div:nth-child(3){
+    grid-column-start: 4;
+}
+
+.profile-icon{
+    position: relative;
+}
+
+.profile-icon>svg{
+    position: absolute;
+    transform: translate(-50%,-50%); 
+}
+
+.navigation-bar>.profile-icon>svg{
+    left: 20px;
+    top: 20px;
+}
+
+.profile-bar>.profile-icon>svg{
+    left: 50px;
+    top: 50px;
 }
 
 
