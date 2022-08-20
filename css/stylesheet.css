@@ -23,7 +23,7 @@ body{
     gap: 50px;
     padding: 10px 15px;
     box-sizing:border-box;
-
+    height: 100%;
 }
 
 .sidebar>.logo,
@@ -161,6 +161,70 @@ body{
 .main-content{
     grid-area: main;
     background: var(--main-grey);
+    display: grid;
+    grid-template-columns: minmax(auto,1fr) 400px;
+    box-sizing: border-box;
+    padding: 30px 30px 20px 20px;
 }
+
+.section-title,.projects>.project-card>.project-title{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.main-content>.projects-section{
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    gap: 15px;
+}
+
+.main-content>.projects-section>.projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(369px,1fr));
+    gap: 30px;
+}
+
+.main-content>.projects-section>.projects>.project-card{
+    min-height: 250px;
+    background: linear-gradient(to right,#facc15 10px, white 10px 100%);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px 0 rgba(128, 128, 128, 0.562);
+    box-sizing: border-box;
+    padding: 35px;
+    gap: 20px;
+    display: grid;
+    grid-template-rows: max-content 1fr 40px;
+}
+
+.projects-section>.projects>.project-card>.project-content{
+    color: #666666;
+    margin-top: -15px;
+}
+
+.projects-section>.projects>.project-card>.card-operations{
+    display: grid;
+    grid-template-columns: 40px 40px 40px;
+    justify-content: end;
+    gap: 10px;
+}
+
+.star,
+.eye,
+.share{
+    background: center/25px 25px no-repeat; 
+}
+
+.star{
+    background-image: url("../icons/star-plus-outline.svg");
+}
+
+.eye{
+    background-image: url("../icons/eye-plus-outline.svg");
+}
+
+.share{
+    background-image: url("../icons/share-variant-outline.svg");
+}
+
 
 
