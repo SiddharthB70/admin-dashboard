@@ -10,7 +10,7 @@ body{
     display: grid;
     grid-template-areas: "sidebar header"
                         "sidebar main";
-    grid-template-columns: minmax(min-content,300px) 1fr;
+    grid-template-columns: minmax(auto,300px) 1fr;
     grid-template-rows: 170px 1fr;
     font-family: 'Roboto', sans-serif;
 }
@@ -164,7 +164,8 @@ body{
     display: grid;
     grid-template-columns: minmax(auto,1fr) 400px;
     box-sizing: border-box;
-    padding: 30px 30px 20px 20px;
+    padding: 30px 30px 80px 20px;
+    gap: 30px;
 }
 
 .section-title,.projects>.project-card>.project-title{
@@ -186,6 +187,7 @@ body{
 
 .main-content>.projects-section>.projects>.project-card{
     min-height: 250px;
+    max-height: 400px;
     background: linear-gradient(to right,#facc15 10px, white 10px 100%);
     border-radius: 10px;
     box-shadow: 3px 3px 5px 0 rgba(128, 128, 128, 0.562);
@@ -226,5 +228,61 @@ body{
     background-image: url("../icons/share-variant-outline.svg");
 }
 
+
+.main-content>.misc-section{
+    display: grid;
+    grid-template-rows: max-content 380px 10px max-content 300px;
+    gap: 20px;
+}
+
+.main-content>.misc-section>.announcements-section,
+.main-content>.misc-section>.trending-section{
+    background: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px 0 rgba(128, 128, 128, 0.562);
+    box-sizing: border-box;
+    padding: 35px;
+    display: grid;
+    gap: 20px;
+}
+
+.main-content>.misc-section>.announcements-section{
+    grid-template-rows: repeat(3,min(1fr,500px));
+}
+
+.main-content>.misc-section>.announcements-section>.announcements{
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.main-content>.misc-section>.announcements-section>.announcements>.announcement-title{
+    font-size: 15px;
+    font-weight: 500;
+    flex: 0 0 auto;
+}
+
+.main-content>.misc-section>.announcements-section>.announcements>.announcement-content{
+    color: #666666;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    flex: 1 0 auto;
+}
+
+.main-content>.misc-section>.announcements-section>.announcements>.line-wrapper{
+    display: block;
+    width: 105%;
+    border-bottom: solid;
+    align-self: center;
+    border-color: var(--main-grey);
+}
+
+.main-content>.misc-section>.section-title.trending{
+    grid-row-start: 4;
+}
+
+.main-content>.misc-section>.trending-section{
+    grid-row-start: 5;
+}
 
 
