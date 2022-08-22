@@ -3,6 +3,8 @@
     padding: 0;
     --sidebar-blue: #1992d4;
     --main-grey: #e2e8f0;
+    --text-grey: #666666;
+    --profile-color: #facc15;
 }
 
 body{
@@ -91,7 +93,7 @@ body{
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background-color: #facc15;
+    background-color: var(--profile-color);
 }
 
 .header>.navigation-bar>.profile-name{
@@ -147,7 +149,7 @@ body{
     transform: translate(-50%,-50%); 
 }
 
-.navigation-bar>.profile-icon>svg{
+.profile-icon>svg{
     left: 20px;
     top: 20px;
 }
@@ -162,7 +164,7 @@ body{
     grid-area: main;
     background: var(--main-grey);
     display: grid;
-    grid-template-columns: minmax(auto,1fr) 400px;
+    grid-template-columns: minmax(auto,1fr) 320px;
     box-sizing: border-box;
     padding: 30px 30px 80px 20px;
     gap: 30px;
@@ -188,7 +190,7 @@ body{
 .main-content>.projects-section>.projects>.project-card{
     min-height: 250px;
     max-height: 400px;
-    background: linear-gradient(to right,#facc15 10px, white 10px 100%);
+    background: linear-gradient(to right,var(--profile-color) 10px, white 10px 100%);
     border-radius: 10px;
     box-shadow: 3px 3px 5px 0 rgba(128, 128, 128, 0.562);
     box-sizing: border-box;
@@ -199,7 +201,7 @@ body{
 }
 
 .projects-section>.projects>.project-card>.project-content{
-    color: #666666;
+    color: var(--text-grey);
     margin-top: -15px;
 }
 
@@ -231,7 +233,7 @@ body{
 
 .main-content>.misc-section{
     display: grid;
-    grid-template-rows: max-content 380px 10px max-content 300px;
+    grid-template-rows: max-content 380px 10px max-content max-content;
     gap: 20px;
 }
 
@@ -247,7 +249,7 @@ body{
 }
 
 .main-content>.misc-section>.announcements-section{
-    grid-template-rows: repeat(3,min(1fr,500px));
+    grid-template-rows: repeat(3,minmax(auto,1fr));
 }
 
 .main-content>.misc-section>.announcements-section>.announcements{
@@ -263,7 +265,7 @@ body{
 }
 
 .main-content>.misc-section>.announcements-section>.announcements>.announcement-content{
-    color: #666666;
+    color: var(--text-grey);
     font-size: 14px;
     letter-spacing: -0.5px;
     flex: 1 0 auto;
@@ -285,4 +287,34 @@ body{
     grid-row-start: 5;
 }
 
+.main-content>.misc-section>.trending-section{
+    grid-template-rows: repeat(4,50px);
+}
 
+.main-content>.misc-section>.trending-section>.account{
+    display: grid;
+    grid-template-columns: 40px auto;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-content>.misc-section>.trending-section>.account>.account-details>span{
+    display: block;
+    color: var(--text-grey);
+}
+
+.main-content>.misc-section>.trending-section>.account>.account-details>.tag{
+    color: black;
+}
+
+.main-content>.misc-section>.trending-section>.account:nth-child(1)>.profile-icon>.circle-back{
+    background: #e0f2fe;
+}
+
+.main-content>.misc-section>.trending-section>.account:nth-child(3)>.profile-icon>.circle-back{
+    background: #a3a3a3;
+}
+
+.main-content>.misc-section>.trending-section>.account:nth-child(4)>.profile-icon>.circle-back{
+    background: #fda4af;
+}
